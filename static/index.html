@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AegisRisk – Fraud detection and risk operations</title>
+  <meta name="theme-color" content="#16202a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <section id="auth" aria-label="Sign in">
+    <div class="auth-hero">
+      <canvas id="hero-map" aria-hidden="true"></canvas>
+      <div class="auth-copy">
+        <div class="hero-kicker"><span class="kicker-pulse"></span> INTELLIGENCE THAT MOVES AT TRANSACTION SPEED</div>
+        <div class="hero-mark" aria-hidden="true"><span>AR</span><i></i><i></i><i></i></div>
+        <h1>Aegis<span>Risk</span></h1>
+        <p>See the signal behind every transaction. Detect unusual patterns, understand model decisions, and turn risk into action — in one live command centre.</p>
+        <div class="hero-highlights">
+          <div><strong>01</strong><span>Live risk scoring</span></div>
+          <div><strong>02</strong><span>Explainable AI</span></div>
+          <div><strong>03</strong><span>Case intelligence</span></div>
+        </div>
+        <div class="hero-foot"><span class="hero-foot-dot"></span> FRAUD INTELLIGENCE PLATFORM <span class="hero-foot-line"></span> INDIA • IST</div>
+      </div>
+    </div>
+    <form class="auth-form" id="login-form" autocomplete="on">
+      <div class="form-brand"><span class="form-brand-icon">A</span><span>AEGIS<span>RISK</span></span><span class="secure-label">SECURE ACCESS</span></div>
+      <div class="form-intro"><span class="section-eyebrow">RISK OPERATIONS / PORTAL 01</span><h2>Welcome back<span class="accent-period">.</span></h2></div>
+      <p class="muted auth-subtitle">Choose your workspace, then sign in to your risk console.</p>
+      <div class="role-pick" role="group" aria-label="Demo roles">
+        <button type="button" data-email="cro@securebank.com">Risk officer</button>
+        <button type="button" data-email="customer@securebank.com">Customer</button>
+        <button type="button" data-email="admin@securebank.com">Admin</button>
+      </div>
+      <label>Email<input id="email" type="email" required autocomplete="username"></label>
+      <label>Password<input id="password" type="password" required autocomplete="current-password"></label>
+      <div id="auth-error" class="form-error" role="alert" hidden></div>
+      <button class="btn primary" type="submit" id="login-btn">Sign in</button>
+      <div class="login-note"><span class="note-icon">i</span><p><strong>Demo environment</strong><br>All demo roles use <code>pass123</code>. Change credentials before sharing a public deployment.</p></div>
+      <div class="form-foot"><span>AEGISRISK v1.0</span><span>BUILT FOR CLARITY. DESIGNED FOR ACTION.</span></div>
+    </form>
+  </section>
+
+  <div id="app" hidden>
+    <aside id="side"></aside>
+    <div class="main">
+      <header id="top"></header>
+      <main id="view" tabindex="-1"></main>
+    </div>
+  </div>
+  <div id="toasts" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

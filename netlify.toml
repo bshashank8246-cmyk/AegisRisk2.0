@@ -1,0 +1,10 @@
+# Only for hosting the FRONTEND on Netlify. The Flask backend must run elsewhere (Render, Railway, ...).
+# Replace the URL below with your backend; the proxy removes any CORS setup.
+[build]
+  publish = "static"
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://YOUR-BACKEND.onrender.com/api/:splat"
+  status = 200
+  force = true

@@ -1,0 +1,23 @@
+# Render Blueprint: New > Blueprint > pick your GitHub repo.
+services:
+  - type: web
+    name: aegisrisk
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --workers 1 --threads 4 --timeout 180 --bind 0.0.0.0:$PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
+      - key: DEMO_MODE
+        value: "1"
+      - key: OFFICER_PASSWORD
+        generateValue: true
+      - key: ADMIN_PASSWORD
+        generateValue: true
+      - key: CUSTOMER_PASSWORD
+        generateValue: true
+      # For data that survives restarts, add a Render PostgreSQL database and set:
+      # - key: DATABASE_URL
+      #   fromDatabase: { name: aegis-db, property: connectionString }
