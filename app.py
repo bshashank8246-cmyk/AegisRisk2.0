@@ -70,9 +70,9 @@ def bootstrap():
         db.add_customer(dict(customer_id=c[0], full_name=c[1], email=c[2], phone="+91 98000 11223", balance=c[7],
                              card_last4=c[8], home_city=c[3], usual_device=c[4], normal_min=c[5], normal_max=c[6]))
     pw = lambda k, d: os.getenv(k, d)
-    db.create_user("customer@securebank.com", pw("CUSTOMER_PASSWORD", "pass123"), "Aarav Reddy", "CUSTOMER", "C10291")
-    db.create_user("cro@securebank.com", pw("OFFICER_PASSWORD", "pass123"), "Chief Risk Officer", "RISK_OFFICER")
-    db.create_user("admin@securebank.com", pw("ADMIN_PASSWORD", "pass123"), "System Administrator", "ADMIN")
+    db.create_user("customer@gmail.com", pw("CUSTOMER_PASSWORD", "pass123"), "Aarav Reddy", "CUSTOMER", "C10291")
+    db.create_user("aegisrisk.officer@gmail.com", pw("OFFICER_PASSWORD", "pass123"), "Chief Risk Officer", "RISK_OFFICER")
+    db.create_user("admin@gmail.com", pw("ADMIN_PASSWORD", "pass123"), "System Administrator", "ADMIN")
     custs = [db.customer(c[0]) for c in CUSTOMERS]
     start = datetime.now(timezone.utc) - timedelta(days=7)
     for i in range(320):
